@@ -4,6 +4,14 @@ import "./App.css";
 import { Title, Button, AddBlog } from "./components";
 
 class App extends Component {
+  
+  state = {
+    entries: {}
+  };
+
+  AddEntry = entry => {
+
+  }
   render() {
     return (
       <div className="App">
@@ -11,8 +19,7 @@ class App extends Component {
           <Title />
         </header>
         <Button title="Add Blog Post"/>
-
-        <AddBlog/>
+        <AddBlog addEntry={this.AddEntry}/>
       </div>
     );
   }
