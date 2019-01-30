@@ -25,77 +25,29 @@ const Container = styled.form`
 `;
 
 class index extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      newPost: {
-        heading: "",
-        content: "",
-        image: ""
-      }
-    };
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    // this.handleInput = this.handleInput.bind(this);
-  }
-  //  handleInput(e) {
-  //     let value = e.target.value;
-  //     let name = e.target.name;
-  //     this.setState(
-  //       prevState => ({
-  //         newUser: {
-  //           ...prevState.newUser,
-  //           [name]: value
-  //         }
-  //       }),
-  //       () => console.log(this.state.newUser)
-  //     );
-  //   }
-  handleFormSubmit(e) {
-    e.preventDefault();
-    let blogData = this.state.newPost;
-  }
-
-  handleInput = e => {
-    e.preventDefault();
-    let value = e.target.value;
-    let name = e.target.name;
-    this.setState(
-      prevState => ({
-        newPost: {
-          ...prevState.newPost,
-          [name]: value
-        }
-      }),
-      () => console.log(this.state.newPost)
-    );
-  };
-
+  
   render() {
     return (
-      <Container className="add-blog-post" onSubmit={this.handleFormSubmit}>
+      <Container className="add-blog-post" onSubmit={this.props.handleFormSubmit}>
         <Heading
           name={"heading"}
           placeholder={"Enter heading"}
           inputType={"text"}
-          value={this.state.newPost.heading}
-          handleChange={this.handleInput}
+          handleChange={this.props.handleInput}
         />
         <Content
           name={"content"}
           placeholder={"Enter Content"}
           inputType={"text"}
-          value={this.state.newPost.content}
-          handleChange={this.handleInput}
+          handleChange={this.props.handleInput}
         />
         <Image
           name={"image"}
           placeholder={"Enter Image URL"}
           inputType={"text"}
-          value={this.state.newPost.image}
-          handleChange={this.handleInput}
+          handleChange={this.props.handleInput}
         />
-        <StyledButton title="Add Entry" />
+        <StyledButton title="Add Entry"  />
       </Container>
     );
   }
