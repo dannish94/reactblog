@@ -8,9 +8,11 @@ const StyledHeading = styled.div`
 
 const List = (props) => (
     <StyledHeading className="list">
-        <ul className="entry">
-vdfdf
-        </ul>
+      <li className="list-item">
+          <h3 className="item-heading">
+              {props.details.heading}
+          </h3>
+      </li>
     </StyledHeading>
 )
 

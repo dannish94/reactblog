@@ -8,17 +8,18 @@ class App extends Component {
 constructor(props) {
     super(props);
     this.state = {
-      newPost: {}
+      posts: {}
     };
   }
 
     handleFormSubmit = (e) => {
     e.preventDefault();
-    const entry =  { ...this.state.newPost }
-    let blogData = this.state.newPost;
+    const entry =  { ...this.state.posts }
+    let blogData = this.state.posts;
     entry[`blog${Date.now()}`] = blogData;
-    this.setState({newPost: entry});
+    this.setState({posts: entry});
     
+    alert("You have added a blog post");
     e.currentTarget.reset();
   }   
 
@@ -28,14 +29,15 @@ constructor(props) {
     let name = e.target.name;
     this.setState(
       prevState => ({
-        newPost: {
-          ...prevState.newPost,
+        posts: {
+          ...prevState.posts,
           [name]: value
         }
       }),
-      () => console.log(this.state.newPost)
+      () => console.log(this.state.posts)
     );
   };
+
 
   render() {
     return (
@@ -44,10 +46,13 @@ constructor(props) {
           <Title />
         </header>
         <Button title="Add Blog Post"/>
-        <ListBlogs/>
+        <ListBlogs 
+        postValue={this.state.posts}
+        />
         <AddBlog 
         handleInput={this.handleInput}
-        handleFormSubmit={this.handleFormSubmit}/>
+        handleFormSubmit={this.handleFormSubmit}
+        />
         
       </div>
     );

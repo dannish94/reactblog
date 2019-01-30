@@ -12,7 +12,7 @@ const StyledButton = styled(Button)`
 `;
 const Container = styled.form`
   width: 30%;
-  bottom: 100px;
+  top: 75px;
   margin-left: 20px;
   max-height: 300px;
   max-width: 400px;
@@ -20,7 +20,7 @@ const Container = styled.form`
   border-radius: 5px;
   border: 1px solid white;
   position: fixed;
-  justify-content: center;
+  justify-content: center ;
   align-items: center;
 `;
 
