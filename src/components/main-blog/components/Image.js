@@ -5,7 +5,7 @@ const StyledImage = styled.div`
   width: 50px;
   padding: 0 10px 10px 10px;
 `;
-const StyledInput = styled.input`
+const StyledInput = styled.div`
   max-height: 200px;
   max-width: 250px;
   min-width: 150px;
@@ -20,8 +20,9 @@ const Image = (props) => (
       placeholder={props.placeholder}
       type={props.inputType}
       value={props.value}
-      onChange={props.handleChange}
-    />
+      onChange={props.handleChange}>
+      {props.value}
+      </StyledInput>
   </StyledImage>
 );
 

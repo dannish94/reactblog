@@ -5,7 +5,7 @@ const StyledContent = styled.div`
   width: 50px;
   padding: 10px 10px 10px 10px;
 `;
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled.div`
   max-height: 200px;
   max-width: 175px;
   min-width: 175px;
@@ -20,8 +20,9 @@ const Content = (props) => (
       placeholder={props.placeholder}
       type={props.inputType}
       value={props.value}
-      onChange={props.handleChange}
-    />
+      onChange={props.handleChange}>
+      {props.value}
+      </StyledTextArea>
   </StyledContent>
 );
 

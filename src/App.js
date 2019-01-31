@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Title, Button, AddBlog, ListBlogs } from "./components";
+import { Title, Button, AddBlog, ListBlogs, ViewBlogs } from "./components";
 
 class App extends Component {
   
@@ -46,13 +46,19 @@ constructor(props) {
           <Title />
         </header>
         <Button title="Add Blog Post"/>
+
+        <ViewBlogs 
+        postValue={this.state.posts}
+        />
         <ListBlogs 
         postValue={this.state.posts}
         />
         <AddBlog 
         handleInput={this.handleInput}
         handleFormSubmit={this.handleFormSubmit}
+        postValue={this.state.posts}
         />
+
         
       </div>
     );
