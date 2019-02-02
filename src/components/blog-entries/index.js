@@ -17,13 +17,23 @@ const Container = styled.form`
 `;
 
 class index extends React.Component {
+
+    handleClick = (key) => {
+        this.props.handleViewPost(key);
+    } 
+
   render() {
     return (
       <Container>
         <ul className="entry">
-          {Object.keys(this.props.postValue).map(key => (
-            <List key={key} details={this.props.postValue[key]} />
-          ))}
+          {Object.keys(this.props.postValue).map(key => 
+            <List 
+            key={key}
+            index={key} 
+            details={this.props.postValue[key]} 
+            handleViewPost={this.handleClick} 
+            />
+          )}
         </ul>
       </Container>
     );

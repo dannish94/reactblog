@@ -8,8 +8,10 @@ class App extends Component {
 constructor(props) {
     super(props);
     this.state = {
-      posts: {}
+      posts: {},
+      current: {}
     };
+     this.handleViewPost = this.handleViewPost.bind(this);
   }
 
     handleFormSubmit = (e) => {
@@ -38,7 +40,13 @@ constructor(props) {
     );
   };
 
-
+  handleViewPost = (key) =>
+  {
+    const current = {...this.state.current}
+    current[key] = current[key];
+    // console.log(current[key],"TESTING ONCLICK");
+    this.setState({current: this.state.posts[key]} );
+  }
   render() {
     return (
       <div className="App">
@@ -48,18 +56,19 @@ constructor(props) {
         <Button title="Add Blog Post"/>
 
         <ViewBlogs 
+        currentPost={this.state.current}
         postValue={this.state.posts}
         />
         <ListBlogs 
         postValue={this.state.posts}
+        currentPost={this.state.current}
+        handleViewPost={this.handleViewPost}
         />
         <AddBlog 
         handleInput={this.handleInput}
         handleFormSubmit={this.handleFormSubmit}
         postValue={this.state.posts}
-        />
-
-        
+        /> 
       </div>
     );
   }

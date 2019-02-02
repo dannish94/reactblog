@@ -28,16 +28,17 @@ const Container = styled.form`
 class index extends React.Component {
   
   render() {
+
     return (
       <Container className="view-blog-post">
         <Heading
-        value={this.props.postValue.heading}
+        value={this.props.currentPost}
         />
         <Content
-        value={this.props.postValue.content}
+        value={this.props.currentPost}
         />
         <Image
-        value={this.props.postValue.image}
+        value={this.props.currentPost}
         />
       </Container>
     );

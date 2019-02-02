@@ -5,14 +5,19 @@ const StyledHeading = styled.div`
   width: 50px;
 `;
 
-const List = (props) => (
+class List extends React.Component {
+
+  render() {
+    return (
     <StyledHeading className="list">
       <li className="list-item">
-          <h3 className="item-heading">
-              {props.details.heading}
-          </h3>
+          <div className="item-heading" onClick={() => this.props.handleViewPost(this.props.index)}>
+         {this.props.details.heading}
+          </div>
       </li>
     </StyledHeading>
-)
+);
+  }
+}
 
 export default List;
