@@ -1,3 +1,7 @@
+Creating a simple blog using react with goals of further implementations of using redux, node.js backend in combo with mongodb.
+
+----------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
