@@ -1,4 +1,6 @@
-Creating a simple blog using react with goals of further implementations of using redux, node.js backend in combo with mongodb.
+Creating a simple blog - This is my dummy projects and i will extend it everytime I learn a new tech
+
+Currently just using react with goals of further implementations of using redux to store state and then use of node.js backend in combo with mongodb to have a database store of blog posts/entries etc
 
 ----------------------------------------------------------------------------------------------------------------
 
